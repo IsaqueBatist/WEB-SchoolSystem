@@ -1,1 +1,91 @@
-<p>courses works!</p>
+<div class="container bg-light p-4">
+  <div class="row">
+    <div class="col-7 m-auto">
+      <h1 class="text-center">Cadastro de Cursos</h1>
+      <form>
+        <div class="d-flex gap-3">
+          <div class="col-6">
+            <label for="inputName" class="form-label">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputName"
+              aria-describedby="nameHelp"
+            />
+            <div id="nameHelp" class="form-text">Digite o nome do curso</div>
+          </div>
+          <div class="col-6">
+            <label for="inputPrice" class="form-label">Preço</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inputPrice"
+              aria-describedby="priceHelp"
+            />
+            <div id="priceHelp" class="form-text">Digite o preço</div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 my-3">
+          <div class="col-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="activeRadio"
+                id="activeRadio"
+                checked
+              />
+              <label class="form-check-label" for="activeRadio"> Ativo </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="activeRadio"
+                id="disableRadio"
+              />
+              <label class="form-check-label" for="disableRadio">
+                Desativo
+              </label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="defaultCheck1"
+              />
+              <label class="form-check-label" for="defaultCheck1">
+                Promocional
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+      <h2 class="text-center">Cursos Cadastrados</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Período</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Promocional</th>
+          </tr>
+        </thead>
+        <!-- <tbody>
+          <tr *ngFor="let s of students">
+            <th scope="row">{{ s.id }}</th>
+            <td>{{ s.name }}</td>
+            <td>{{ s.course }}</td>
+          </tr>
+        </tbody> -->
+      </table>
+    </div>
+  </div>
+</div>

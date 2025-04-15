@@ -4,15 +4,18 @@ import { Observable } from 'rxjs';
 import { Student } from './student';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StudentService {
+  apiUrl = 'http://localhost:3000/students';
 
-  apiUrl = "http://localhost:3000/students";
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getStudents() : Observable<Student[]>{
+  getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this.apiUrl);
+  }
+
+  postStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(this.apiUrl, student);
   }
 }
