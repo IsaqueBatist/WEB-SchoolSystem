@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../student.service';
-import { Student } from '../student';
+import { StudentService } from '../../services/studentservice';
+import { Student } from '../../interfaces/student';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -26,19 +26,17 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getStudents().subscribe({
-      next: (json) => (this.students = json),
+      next: (json: Student[]) => (this.students = json),
     });
   }
 
   save() {
     if (this.formGroupStudent.valid) {
       this.service.postStudent(this.formGroupStudent.value).subscribe({
-        next: (json) => {
+        next: (json: Student) => {
           this.students.push(json), this.formGroupStudent.reset();
         },
       });
-    } else {
-      
     }
   }
 }
