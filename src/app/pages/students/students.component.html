@@ -16,14 +16,15 @@
         </div>
         <div class="mb-3">
           <label for="inputCourse" class="form-label">Curso</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputCourse"
-            aria-describedby="courseHelp"
-            formControlName="course"
-          />
-          <div id="courseHelp" class="form-text">Digite o nome do curso</div>
+          <select class="form-select" aria-label="Default select example" formControlName="course">
+            <option selected>Selecione o curso</option>
+            <ng-container *ngFor="let c of courses">
+              <option *ngIf="c.active" [ngValue]="c">
+                {{ c.name }}
+              </option>
+            </ng-container>
+          </select>
+          <div id="courseHelp" class="form-text">Selecione o curso</div>
         </div>
         <div class="row justify-content-center mb-3">
           <button type="submit" class="btn btn-primary col-2" (click)="save()">Salvar</button>
@@ -42,7 +43,7 @@
           <tr *ngFor="let s of students">
             <th scope="row">{{ s.id }}</th>
             <td>{{ s.name }}</td>
-            <td>{{ s.course }}</td>
+            <td>{{ s.course.name }}</td>
           </tr>
         </tbody>
       </table>

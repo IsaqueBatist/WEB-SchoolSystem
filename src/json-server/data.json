@@ -3,17 +3,68 @@
     {
       "id": 1,
       "name": "José Maria",
-      "course": "Computação"
+      "course": {
+        "id": 1,
+        "name": "Java",
+        "price": 120,
+        "active": true,
+        "promotion": false
+      }
     },
     {
       "id": 2,
       "name": "Fernanda Silva",
-      "course": "Computação"
+      "course": {
+        "id": 2,
+        "name": "Python",
+        "price": 12,
+        "active": true,
+        "promotion": true
+      }
     },
     {
       "id": 3,
       "name": "Mario Antunes",
-      "course": "Matemática"
+      "course": {
+        "id": 4,
+        "name": "Typescript",
+        "price": 100,
+        "active": true,
+        "promotion": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "Cláudia Nunes",
+      "course": {
+        "id": 3,
+        "name": "C#",
+        "price": 90,
+        "active": true,
+        "promotion": false
+      }
+    },
+    {
+      "id": 5,
+      "name": "Isaque",
+      "course": {
+        "id": 2,
+        "name": "Python",
+        "price": 12,
+        "active": true,
+        "promotion": true
+      }
+    },
+    {
+      "id": 6,
+      "name": "Izak",
+      "course": {
+        "id": 7,
+        "name": "React Native",
+        "price": 12,
+        "active": true,
+        "promotion": true
+      }
     }
   ],
   "courses": [
@@ -33,14 +84,35 @@
     },
     {
       "id": 3,
-      "name": "Python",
-      "price": 12,
+      "name": "C#",
+      "price": 90,
       "active": true,
-      "promotion": true
+      "promotion": false
     },
     {
       "id": 4,
       "name": "Typescript",
+      "price": 100,
+      "active": true,
+      "promotion": true
+    },
+    {
+      "id": 5,
+      "name": "Java básico",
+      "price": 50,
+      "active": true,
+      "promotion": true
+    },
+    {
+      "id": 6,
+      "name": "Java intermediário",
+      "price": 12,
+      "active": false,
+      "promotion": ""
+    },
+    {
+      "id": 7,
+      "name": "React Native",
       "price": 12,
       "active": true,
       "promotion": true

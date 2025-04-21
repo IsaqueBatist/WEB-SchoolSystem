@@ -4,5 +4,4 @@ export interface Course {
   price: number,
   active: boolean,
   promotion: boolean
-
 }

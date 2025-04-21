@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../services/studentservice';
 import { Student } from '../../interfaces/student';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Course } from '../../interfaces/course';
+import { CourseserviceService } from '../../services/courseservice.service';
 
 @Component({
   selector: 'app-students',
@@ -12,9 +14,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class StudentsComponent implements OnInit {
   students: Student[] = [];
   formGroupStudent: FormGroup;
+  courses: Course[] = []
 
   constructor(
-    private service: StudentService,
+    private studentService: StudentService,
+    private courseService: CourseserviceService,
     private formBuilder: FormBuilder
   ) {
     this.formGroupStudent = formBuilder.group({
@@ -25,14 +29,14 @@ export class StudentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getStudents().subscribe({
-      next: (json: Student[]) => (this.students = json),
-    });
+    this.getStudents()
+    this.getCourses()
   }
 
   save() {
     if (this.formGroupStudent.valid) {
-      this.service.postStudent(this.formGroupStudent.value).subscribe({
+      console.log(this.formGroupStudent.value)
+      this.studentService.postStudent(this.formGroupStudent.value).subscribe({
         next: (json: Student) => {
           this.students.push(json), this.formGroupStudent.reset();
         },
@@ -40,5 +44,17 @@ export class StudentsComponent implements OnInit {
     }else{
       window.alert("Formulário inválido");
     }
+  }
+
+  getStudents(){
+    this.studentService.getStudents().subscribe({
+      next: (json: Student[]) => (this.students = json),
+    });
+  }
+
+  getCourses(){
+    this.courseService.getCourse().subscribe({
+      next: (data: Course[]) => this.courses = data
+    })
   }
 }
