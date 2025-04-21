@@ -15,5 +15,35 @@
       "name": "Mario Antunes",
       "course": "Matemática"
     }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Java",
+      "price": 120,
+      "active": true,
+      "promotion": false
+    },
+    {
+      "id": 2,
+      "name": "Python",
+      "price": 12,
+      "active": true,
+      "promotion": true
+    },
+    {
+      "id": 3,
+      "name": "Python",
+      "price": 12,
+      "active": true,
+      "promotion": true
+    },
+    {
+      "id": 4,
+      "name": "Typescript",
+      "price": 12,
+      "active": true,
+      "promotion": true
+    }
   ]
 }

@@ -37,6 +37,8 @@ export class StudentsComponent implements OnInit {
           this.students.push(json), this.formGroupStudent.reset();
         },
       });
+    }else{
+      window.alert("Formulário inválido");
     }
   }
 }
