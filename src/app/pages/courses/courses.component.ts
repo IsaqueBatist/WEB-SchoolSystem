@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit{
       name: ['', Validators.required],
       price: ['', Validators.required],
       active: [true],
-      promotion: [''],
+      promotion: [false],
     })
   }
   ngOnInit(): void {

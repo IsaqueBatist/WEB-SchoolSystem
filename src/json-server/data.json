@@ -108,7 +108,7 @@
       "name": "Java intermediário",
       "price": 12,
       "active": false,
-      "promotion": ""
+      "promotion": false
     },
     {
       "id": 7,
